@@ -1,0 +1,11 @@
+# Local UI/runtime files; no personal Git history is included.
+.DS_Store
+**/.DS_Store
+vault/.trash/
+vault/.obsidian/cache/
+vault/.obsidian/workspace*.json
+vault/.obsidian/sync.json
+vault/.obsidian/plugins/
+vault/.obsidian/file-recovery.json
+.env
+.env.*

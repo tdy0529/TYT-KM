@@ -1,0 +1,71 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.inFolder("20_Knowledge")
+formulas:
+  source_count: list(source_refs).length
+properties:
+  type:
+    displayName: 類型
+  kind:
+    displayName: 內容形態
+  status:
+    displayName: 狀態
+  confidence:
+    displayName: 信心
+  updated:
+    displayName: 更新日
+  maps:
+    displayName: 地圖
+  formula.source_count:
+    displayName: 來源數
+views:
+  - type: table
+    name: 綜合知識
+    filters:
+      and:
+        - type == "knowledge-note"
+    order:
+      - file.name
+      - kind
+      - status
+      - confidence
+      - formula.source_count
+      - updated
+      - maps
+  - type: table
+    name: 待複核
+    filters:
+      and:
+        - type == "knowledge-note"
+        - or:
+            - status == "draft"
+            - status == "needs-review"
+            - status == "contested"
+    order:
+      - file.name
+      - status
+      - confidence
+      - updated
+      - maps
+      - formula.source_count
+  - type: table
+    name: 來源筆記
+    filters:
+      and:
+        - type == "source-note"
+    order:
+      - file.name
+      - status
+      - source_type
+      - accessed
+      - maps
+  - type: table
+    name: 知識地圖
+    filters:
+      and:
+        - type == "map"
+    order:
+      - file.name
+      - status
+      - updated

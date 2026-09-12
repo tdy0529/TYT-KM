@@ -1,0 +1,29 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "tags": "tags",
+    "id": "text",
+    "type": "text",
+    "kind": "text",
+    "status": "text",
+    "confidence": "text",
+    "created": "date",
+    "updated": "date",
+    "last_verified": "date",
+    "published": "date",
+    "accessed": "date",
+    "source_type": "text",
+    "title": "text",
+    "url": "text",
+    "raw_path": "text",
+    "maps": "multitext",
+    "source_refs": "multitext",
+    "project_refs": "multitext",
+    "related_notes": "multitext",
+    "knowledge_refs": "multitext",
+    "authors": "multitext",
+    "affects": "multitext",
+    "project": "text",
+    "scope": "text"
+  }
+}

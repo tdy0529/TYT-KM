@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "TYT-KM - Web Source Candidate",
+  "behavior": "create",
+  "noteContentFormat": "# {{title|strip_md}}\n\n> [!warning] 未登記來源候選\n> 此頁仍位於 `00_Inbox`；尚未完成 Assess、Register 或 Verify，不可當成已驗證知識引用。\n> 建議下一步：交給 LLM 判斷適配度，再決定丟棄、留在專案或正式登記。\n\n## 來源資訊\n\n- 網站：{{site}}\n- 原始網頁：{{url|link:\"開啟原始網頁\"}}\n- 作者：{{author}}\n- 發布日期：{{published}}\n- 擷取時間：{{time|date:\"YYYY-MM-DDTHH:mm:ssZ\"}}\n- 原始字數：{{words}}\n\n## 擷取內容\n\n{{content}}",
+  "properties": [
+    {
+      "name": "source_type",
+      "value": "webpage",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "value": "{{title}}",
+      "type": "text"
+    },
+    {
+      "name": "authors",
+      "value": "{{author}}",
+      "type": "multitext"
+    },
+    {
+      "name": "published",
+      "value": "{{published|date:\"YYYY-MM-DD\"}}",
+      "type": "date"
+    },
+    {
+      "name": "accessed",
+      "value": "{{date|date:\"YYYY-MM-DD\"}}",
+      "type": "date"
+    },
+    {
+      "name": "url",
+      "value": "{{url}}",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "value": "{{date|date:\"YYYY-MM-DD\"}}",
+      "type": "date"
+    },
+    {
+      "name": "updated",
+      "value": "{{date|date:\"YYYY-MM-DD\"}}",
+      "type": "date"
+    }
+  ],
+  "triggers": [
+    "/^https?:\\/\\/.*$/"
+  ],
+  "noteNameFormat": "{{time|date:\"YYYY-MM-DD HHmmss\"}} - {{title|safe_name}}",
+  "path": "00_Inbox/Web Clips"
+}
